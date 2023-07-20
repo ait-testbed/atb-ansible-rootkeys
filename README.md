@@ -1,7 +1,8 @@
 Ansible-Role: RootKeys
 ========================
 
-Install the public and private ssh-keys for the simulated administrator.
+This role installs the ssh-keys for simultated administrators in the AECID 
+Testbed.
 
 Requirements
 ------------
