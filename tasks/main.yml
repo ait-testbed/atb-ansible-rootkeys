@@ -1,0 +1,37 @@
+---
+# tasks file for rootkeys
+
+- name: Deploy public SSH Admin-Key
+  become: true
+  ansible.posix.authorized_key:
+    user: "{{ rootkeys_public_key_user }}"
+    state: present
+    key:  "{{ rootkeys_public }}"
+  when: rootkeys_install_public == True
+  tags:
+    - public
+
+- name: Ensure SSH-Key diretory present
+  become: true
+  ansible.builtin.file:
+    path: "{{ rootkeys_private_dir }}"
+    state: directory
+    recurse: True
+    owner: "{{ rootkeys_private_key_user }}"
+    group: "{{ rootkeys_private_key_user }}"
+  when: rootkeys_install_private == True
+  tags:
+    - private
+
+- name: Deploy private SSH Admin-Key
+  become: true
+  ansible.builtin.copy:
+    content: "{{ rootkeys_private }}"
+    dest: "{{ rootkeys_private_dir }}/rootkey"
+    mode: '0600'
+    owner: "{{ rootkeys_private_key_user }}"
+    group: "{{ rootkeys_private_key_user }}"
+  when: rootkeys_install_private == True
+  tags:
+    - private
+

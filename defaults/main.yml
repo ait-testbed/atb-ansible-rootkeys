@@ -1,0 +1,21 @@
+---
+# defaults file for rootkeys
+
+rootkeys_install_private: False
+rootkeys_install_public: True
+
+rootkeys_public_key_user: root
+rootkeys_private_key_user: root
+rootkeys_private_dir: "/root/.ssh"
+
+rootkeys_private: |
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACAULlkY9CE9bFp2PrAXUQyMY1Hr7ltbopEcEO8deTKfuQAAAJBxW1xRcVtc
+UQAAAAtzc2gtZWQyNTUxOQAAACAULlkY9CE9bFp2PrAXUQyMY1Hr7ltbopEcEO8deTKfuQ
+AAAECPOwKRVHK+txAr5AyhQJN9P8fJqHy8fDomx2jQtXaMoxQuWRj0IT1sWnY+sBdRDIxj
+UevuW1uikRwQ7x15Mp+5AAAAB3Jvb3RrZXkBAgMEBQY=
+-----END OPENSSH PRIVATE KEY-----
+
+
+rootkeys_public: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBQuWRj0IT1sWnY+sBdRDIxjUevuW1uikRwQ7x15Mp+5 rootkey"
